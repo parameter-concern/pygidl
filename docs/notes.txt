@@ -1,0 +1,12 @@
+# Notes
+
+## TODO
+
+make some sphinx documentation
+
+## Links
+
+- https://medium.com/@cgarciae/making-an-infinite-number-of-requests-with-python-aiohttp-pypeln-3a552b97dc95
+    - uses a task pool with a semaphore to limit number of tasks
+- https://etlsh.com/2017/01/21/using-asyncio-to-download-hacker-news/
+    - uses a queue to limit number of tasks

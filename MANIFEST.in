@@ -1,4 +1,4 @@
 graft src
 
-include README
+include README.md
 include LICENSE

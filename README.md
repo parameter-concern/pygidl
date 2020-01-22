@@ -105,12 +105,35 @@ tree -d .
 
 ## Programmatic Usage
 
-Something like the following should work:
+Something like the following should work (assuming you have `opencv-python`
+installed in your environment):
 
 ```python
+import asyncio
+import os
+
+import cv2
+
 from pygidl import scrape_google_images
 
-downloaded_image_paths = scrape_google_images(...)
+
+downloaded_image_paths = asyncio.run(
+    scrape_google_images(
+        base_query="cats and dogs",
+        prefixes=["cute", "adorable"],
+        suffixes=["playing", "running"],
+        group="cute-animals",
+        output_dir=os.getcwd(),
+        face=False,
+    )
+)
+for path in downloaded_image_paths:
+    image = cv2.imread(path)
+    if image is None:
+        print(f"could not load image {path}")
+        continue
+    height, width = image.shape[:2]
+    print(f"image {path} has size {width}x{height}")
 ```
 
 ## Known Issues and Limitations

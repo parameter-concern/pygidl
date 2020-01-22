@@ -29,6 +29,11 @@ setuptools.setup(
     long_description=get_long_description(),
     long_description_content_type="text/markdown",
     url="https://github.com/parameter-concern/pygidl",
+    download_url="https://github.com/parameter-concern/pygidl/releases/",
+    project_urls={
+        "Bug Tracker": "https://github.com/parameter-concern/pygidl/issues/",
+        "Source Code": "https://github.com/parameter-concern/pygidl/",
+    },
     license="MIT",
     packages=[PACKAGE_NAME],
     package_dir={"": "src"},

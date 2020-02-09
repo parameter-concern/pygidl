@@ -5,14 +5,14 @@ import setuptools
 PACKAGE_NAME = "pygidl"
 
 
-def get_long_description():
+def get_long_description() -> str:
     """Read long description from README.md file."""
     with open("README.md", "r") as readme_file:
         long_description = readme_file.read()
     return long_description
 
 
-def get_package_version():
+def get_package_version() -> str:
     """Extract version information from package."""
     version = {}
     with open(os.path.join("src", PACKAGE_NAME, "version.py")) as version_file:
